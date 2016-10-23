@@ -11,7 +11,9 @@ jQuery.get('https://raw.githubusercontent.com/johnlk/corgiGame/master/images.txt
       
     for (var i = 0; i < imageLinks.length; i++) {
         link = imageLinks[i];
-        picArea.innerHTML += "<img class=\"pics\" src=" + link + " style=\"max-width: " + maxWidth + "px;\">";
+        if(link.length > 0){
+            picArea.innerHTML += "<img class=\"pics\" src=" + link + " style=\"max-width: " + maxWidth + "px;\">";
+        }
     }
       
     var index;
