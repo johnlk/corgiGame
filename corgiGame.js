@@ -1,6 +1,6 @@
 jQuery.get('https://raw.githubusercontent.com/johnlk/corgiGame/master/images.txt', function(data){
     
-    var imageLinks = data.split('\n');
+    var imageLinks = data.split('\n'); //[]
   
     var maxWidth = Math.floor($(window).width()/160) * 33;
       
@@ -20,27 +20,27 @@ jQuery.get('https://raw.githubusercontent.com/johnlk/corgiGame/master/images.txt
   
     $('#picArea img').click(function (e){
           
-    index = $(this).index() + 1;
-      
-    if (index == randomNum) {
-      
-        $('.pics').css("visibility", "hidden");
-        $(this).css("visibility", "visible");
-              
-        alert("You won!!!");
-              
-    }else{
-              
-        if (index > randomNum) {
-            alert("You're below it");
+        index = $(this).index() + 1;
+          
+        if (index == randomNum) {
+          
+            $('.pics').css("visibility", "hidden");
+            $(this).css("visibility", "visible");
+                  
+            alert("You won!!!");
+                  
         }else{
-            alert("You're above it");
+                  
+            if (index > randomNum) {
+                alert("You're below it");
+            }else{
+                alert("You're above it");
+            }
+                  
+            $(this).css("visibility", "hidden");
+                  
         }
               
-        $(this).css("visibility", "hidden");
-              
-    }
-          
-  });
+      });
     
 });
